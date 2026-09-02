@@ -23,6 +23,8 @@ app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 
 @app.route(route="login", methods=["GET"], auth_level=func.AuthLevel.ANONYMOUS)
 def login(req: func.HttpRequest) -> func.HttpResponse:
+    func.HttpResponse("Hello")
+    
     username = req.params.get("username")
     password = req.params.get("password")
 
